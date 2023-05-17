@@ -1,14 +1,147 @@
-<head>
-	<title>Zheyu Aqa Zhang Personal Website</title>
+<head> 
+    <title>Zheyu Aqa Zhang Personal Website</title>
+    <style>
+        .sliderWrap ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .sliderWrap{
+            width: 600px;
+            height: 600px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .sliderWrap li{
+            position: relative;
+            float: left;
+        }
+        .sliderWrap ul li img{
+            width: 100%;
+        }
+        div div div .sliderWrap ul{
+            position: relative;
+            width: 1000px;
+            transition: left .5s ease;
+            left: 0;
+        }
+    </style>
 </head>
 
 <body style="background-color:rgb(255, 255, 233); color: rgb(63, 63, 63);">
 	<br><br><br>
     <h1 align="center">Zheyu Zhang's Personal Website</h1>
 
-    <br><br>
+    <br>
+
+    <div class="sliderWrap">
+        <ul id="slider">
+            <li><img src="figs/1.png" alt=""></li>
+            <li><img src="figs/2.png" alt=""></li>
+            <li><img src="figs/3.jfif" alt=""></li>
+            <li><img src="figs/4.jpg" alt=""></li>
+            <!-- <li><img src="figs/5.jpg" alt=""></li> -->
+            <li><img src="figs/6-2.jpg" alt=""></li>
+        </ul>
+    </div>
+    
+    <script>
+        /**
+         * 图片轮播
+         * @type {Element}
+         */
+        var btn = document.getElementById("next");
+        var dom = document.getElementById("slider");
+        var liArr = dom.getElementsByTagName("li");
+    
+        var curWidth = 600;
+        var ulWidth = curWidth * liArr.length;
+        var show = [];
+        var circle = [];
+    
+        var goAway = "translate(-" + curWidth +"px, 0) translateZ(0px)";
+        var goIn = "translate(0, 0) translateZ(0px)";
+        var goPre = "translate(" + curWidth +"px, 0) translateZ(0px)";
+    
+        //保证所有li在ul中能在一行内放下
+        dom.style.width = ulWidth + "px";
+    
+        for(var i = 0, len = liArr.length; i < len; i++){
+            var curLi = liArr[i];
+    
+            curLi.setAttribute("data-index", i);
+            curLi.style.width = curWidth + "px";
+    
+            if(i == 0){
+                curLi.style.left = 0;
+                show.push(curLi);
+            }else{
+                curLi.style.left =  - curWidth * i + "px";
+                if(i > 1){
+                    translate(curLi, goAway, '')
+                    circle.push(curLi);
+                }else{
+                    show.push(curLi);
+                    translate(curLi, goPre, '');
+                }
+            }
+    
+    
+        }
+    
+        circle.reverse();
+    
+        function fuckone(tim){
+            //已展示的图片滚粗
+            var showFirst = show.shift();
+            translate(showFirst, goAway, tim+"ms");
+    
+            //正在展示的图片
+            translate(show[0], goIn, tim+"ms");
+            circle.splice(0, 0, showFirst);
+    
+            //准备好下一个将要展示的图片
+            var nextPre = circle.pop();
+            translate(nextPre, goPre, "0ms");
+            show.push(nextPre);
+        };
+    
+        function translate(dom, goType, time){
+            dom.style.transform =
+                    dom.style.webkitTransform =
+                            dom.style.mozTransform =
+                                    dom.style.msTransform =
+                                            dom.style.oTransform = goType;
+    
+            dom.style.transitionDuration =
+                    dom.style.webkitTransitionDuration =
+                            dom.style.mozTransitionDuration =
+                                    dom.style.msTransitionDuration =
+                                            dom.oTransitionDuration = time;
+        }
+    
+        function pre(){
+            for(var i = 1, len = liArr.length; i < len; i++) fuckone(0);
+        }
+    
+        function doit(){
+            fuckone(300);
+            setTimeout("doit()",2000);
+        }
+    
+        window.onload = function(){
+            doit();
+        }
+    
+    </script>
+    
+    <div align='center'>
+        <input type="button" value="watch pre" onclick="pre()">
+    </div>
+    
+    <br>
     <div align="center">
-        <div style="width: 1000px;">
+        <div style="width: 800px;">
             <div align="left">
                 <font size="6">Zheyu (Aqa) Zhang</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp;
@@ -25,7 +158,7 @@
     
     <br><br>
     <div align="center">
-        <div style="width: 1000px;">
+        <div style="width: 800px;">
             <div align="left">
                 <font size="6">Research Interests</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -38,22 +171,22 @@
     
     <br><br>
     <div align="center">
-        <div style="width: 1000px;">
+        <div style="width: 800px;">
             <div align="left">
                 <font size="6">Publications</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="2">OpenFE: Automated Feature Generation beyond Expert-level Performance
-			<a href="https://arxiv.org/abs/2211.12507">[link]</a>(accepted by ICML 2023)</font><br/>
+                <font size="3">OpenFE: Automated Feature Generation beyond Expert-level Performance
+			<a href="https://arxiv.org/abs/2211.12507">[link]</a>(ICML 2023)</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="2">Unbiased Gradient Boosting Decision Tree with Unbiased Feature Importance
-			(accepted by IJCAI 2023)</font><br/>
+                <font size="3">Unbiased Gradient Boosting Decision Tree with Unbiased Feature Importance
+			(IJCAI 2023)</font><br/>
             </div>
         </div>
     </div>
     
     <br><br>
     <div align="center">
-        <div style="width: 1000px;">
+        <div style="width: 800px;">
             <div align="left">
                 <font size="6">Interests</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -66,7 +199,7 @@
     
     <br><br>
     <div align="center">
-        <div style="width: 1000px;">
+        <div style="width: 800px;">
             <div align="left">
                 <font size="6">Contact</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
