@@ -7,8 +7,8 @@
             list-style: none;
         }
         .sliderWrap{
-            width: 600px;
-            height: 600px;
+            width: 288px;
+            height: 288px;
             overflow: hidden;
             margin: 0 auto;
         }
@@ -34,14 +34,21 @@
 
     <br>
 
+    <div align="center" style="font: 'Fira Sans', sans-serif; font-weight: bold; color: #CD5C5C">Does this website look so simple it's like it was made by hand?</div>
+    <br>
+    <div align="center" style="font: 'Fira Sans', sans-serif; font-weight: bold; color: #DC143C">"Indeed, it was lovingly stitched together, pixel by pixel."</div>
+
+    <br>
+
     <div class="sliderWrap">
         <ul id="slider">
             <li><img src="figs/1.png" alt=""></li>
-            <li><img src="figs/2.png" alt=""></li>
-            <li><img src="figs/3.jfif" alt=""></li>
+            <li><img src="figs/2.jpg" alt=""></li>
+            <li><img src="figs/6.jpg" alt=""></li>
+            <li><img src="figs/5.jpg" alt=""></li>
+            <li><img src="figs/3.jpg" alt=""></li>
             <li><img src="figs/4.jpg" alt=""></li>
-            <!-- <li><img src="figs/5.jpg" alt=""></li> -->
-            <li><img src="figs/6-2.jpg" alt=""></li>
+            <li><img src="figs/7.jpg" alt=""></li>
         </ul>
     </div>
     
@@ -54,7 +61,7 @@
         var dom = document.getElementById("slider");
         var liArr = dom.getElementsByTagName("li");
     
-        var curWidth = 600;
+        var curWidth = 288;
         var ulWidth = curWidth * liArr.length;
         var show = [];
         var circle = [];
@@ -136,83 +143,105 @@
     </script>
     
     <div align='center'>
-        <input type="button" value="watch pre" onclick="pre()">
+        <input type="button" value="go previous" onclick="pre()">
     </div>
     
     <br>
     <div align="center">
-        <div style="width: 800px;">
+        <div style="width: 600px; font-weight: bold; color: #143958"">
             <div align="left">
-                <font size="6">Zheyu (Aqa) Zhang</font><br/>
+                <font size="5">Zheyu (Aqa) Zhang</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <font size="2">Note: The pronunciation of "Aqa" is [eɪkjuːeɪ].</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Undergraduate</font><br/>
+                <font size="4">Undergraduate</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Institute for Interdisciplinary Information Sciences</font><br/>
+                <font size="4">Institute for Interdisciplinary Information Sciences</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Tsinghua University</font>
+                <font size="4">Tsinghua University</font>
             </div>
         </div>
     </div>
     
     <br><br>
     <div align="center">
-        <div style="width: 800px;">
+        <div style="width: 600px; font-weight: bold; color: #235814"">
             <div align="left">
-                <font size="6">Research Interests</font><br/>
+                <font size="5">Research Interests</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Machine Learning (GBDT)</font><br/>
+                <font size="4">Machine Learning</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Large Language Model</font><br/>
+                <font size="4">Large Language Model</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="4">Reinforcement Learning</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="4">Robotics</font><br/>
             </div>
         </div>
     </div>
     
     <br><br>
     <div align="center">
-        <div style="width: 800px;">
+        <div style="width: 600px; font-weight: bold; color: #63154a"">
             <div align="left">
-                <font size="6">Publications</font><br/>
+                <font size="5">Publications</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="3">OpenFE: Automated Feature Generation beyond Expert-level Performance
-			<a href="https://arxiv.org/abs/2211.12507">[link]</a>(ICML 2023)</font><br/>
+                <font size="2">OpenFE: Automated Feature Generation beyond Expert-level Performance</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="2" color=#888888>T Zhang, Z Zhang, Z Fan, H Luo, F Liu, Q Liu, W Cao, J Li <a href="https://arxiv.org/abs/2211.12507">[link]</a> (ICML 2023)</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="3">Unbiased Gradient Boosting Decision Tree with Unbiased Feature Importance
-			(IJCAI 2023)</font><br/>
+                <font size="2">Unbiased Gradient Boosting Decision Tree with Unbiased Feature Importance</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="2" color=#888888>Z Zhang, T Zhang, J Li <a href="https://arxiv.org/abs/2305.10696">[link]</a> (IJCAI 2023)</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="2">ModuleFormer: Learning Modular Large Language Models From Uncurated Data</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="2" color=#888888>Y Shen, Z Zhang, T Cao, S Tan, Z Chen, C Gan <a href="https://arxiv.org/abs/2306.04640">[link]</a> (preprint)</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="2">Autonomous Tree-search Ability of Large Language Models</font><br/>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <font size="2" color=#888888>Z Zhang, Z Ye, Y Shen, C Gan (preprint)</font><br/>
             </div>
         </div>
     </div>
     
     <br><br>
     <div align="center">
-        <div style="width: 800px;">
+        <div style="width: 600px; font-weight: bold; color: #596315"">
             <div align="left">
-                <font size="6">Interests</font><br/>
+                <font size="5">Interests</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Olympiad in Informatics <a href="https://oier.baoshuo.dev/oier/24730">[link]</a></font><br/>
+                <font size="4">Olympiad in Informatics <a href="https://oier.baoshuo.dev/oier/24730">[link]</a></font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="5">Riichi Mahjong</font><br/>
+                <font size="4">Riichi Mahjong</font><br/>
             </div>
         </div>
     </div>
     
     <br><br>
     <div align="center">
-        <div style="width: 800px;">
+        <div style="width: 600px; font-weight: bold; color: #631515"">
             <div align="left">
-                <font size="6">Contact</font><br/>
+                <font size="5">Contact</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="4">EmaiI: zheyu-zh20 aT maiIs d0t tsinghua DoT edu dOt cn</font><br/>
+                <font size="3">EmaiI: zheyu-zh20 aT maiIs d0t tsinghua DoT edu dOt cn</font><br/>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <font size="4">(Trust your eyes, instead of copy paste.)</font><br/>
+                <font size="3">(Trust your eyes, instead of copy paste.)</font><br/>
             </div>
         </div>
     </div>
 
+    <br>
+    <br>
+    
+    <div align="center" style="font: 'Fira Sans', sans-serif; font-weight: bold; color: #ffffff">What you all have given me far exceeds what I could ever give back.</div>
+    <div align="center" style="font: 'Fira Sans', sans-serif; font-weight: bold; color: #fdfdfd">No amount of "thank yous" could ever suffice.</div>
+    
+    
+
     <br><br>
     <div align="center">
-        <img src="./photo.jpg" width="600px">
+        <img src="./photo.jpg" width="555px">
     </div>
 
     <br><br>
